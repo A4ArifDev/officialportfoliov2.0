@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200;1,300&display=swap');
+
+:root{
+    --primary:#1DBF73;
+    --secondery:#211743;
+    --third:#191D2B;
+    --text:#ffffff;
+    --black:#000;
+    --span:.9rem;
+    --lightH:#E2E8F0;
+    --darkF:#0F172A;
+    --darkH:#172131;
+    --lightP:#8f9eb3;
+    --gradient:linear-gradient(40deg,#130e37c6,#7f1b81d8);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.topbar-icons{
+    @apply text-text text-[22px] hover:text-primary hover:transition-all
+  }
+ .nav-links{
+     @apply text-darkH dark:text-lightP font-semibold text-base uppercase hover:bg-transparent hover:rounded-md hover:text-white dark:hover:text-lightH px-3 py-2 hover:shadow-md dark:hover:bg-lightP
+ }
+ .active-nav-links{
+     @apply text-darkH dark:text-lightH font-semibold text-base uppercase bg-transparent dark:bg-lightP px-3 py-2 rounded-md shadow-md
+ }
+ 
+ @layer utilities {
+     .shape {
+         clip-path: polygon(0 0, 32% 0, 100% 100%, 0% 100%);
+         background:linear-gradient(40deg,#130e37,#7f1b81);
+     }
+   }
+
+   .paragraph{
+    @apply pb-[20px] leading-8 text-darkH dark:text-lightP
+}
+
+.sidebar-nav-links{
+    @apply flex space-x-3 items-center py-[10px] px-[20px] sm:px-[25px] md:px-[30px] dark:bg-[sideBarDark] hover:bg-[#F5F9FC] dark:hover:bg-[#182133] hover:border-l-4 border-[#698EFF] transition-all dark:text-white my-2
+}
+.sidebar-active-nav-links{
+    @apply flex space-x-3 items-center py-[10px] px-[20px] sm:px-[25px] md:px-[30px] bg-[#F5F9FC] dark:bg-[#182133] dark:hover:bg-[#182133]  border-l-4 border-[#698EFF] transition-all dark:text-white my-2
+}
+
+.nav-links-bottom{
+    @apply flex space-x-3 items-center py-[15px] px-[10px] sm:px-[15px] md:px-[30px] dark:bg-[sideBarDark] bg-[#F5F9FC] dark:bg-[#182133] transition-all dark:text-white mt-2 rounded-md shadow-md
+}
+.tab-container{
+    border: 1px solid lightgray;
+}
+.tab-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tab-btns .btn{
+    border-right: 1px solid lightgray;
+    padding: 20px 30px;
+    border-bottom: 1px solid lightgray;
+}
+.tab-btns .btn.tab-btn-active{
+    border-bottom: 3px solid var(--primary);
+    margin: 0;
+}
+.tab-btns .btn.tab-btn-active a h3{
+    color: var(--primary);
+}
+
+.tab-btns .btn:nth-child(3){
+    border-right: none;
+}
+.tab-contents{
+    padding: 20px;
+}
+.tab-contents .tab-content{
+    display: none;
+}
+.tab-contents .tab-content li{
+    margin: 15px 0;
+}
+.tab-contents .tab-content.tab-content-active{
+    display: block;
+}
+.btn-box .btn{
+    display: block;
+    padding: 12px 28px;
+    border-radius: 4px;
+    background-color: var(--primary);
+    color: var(--text);
+    margin: 5px 0;
+    text-align: center;
+}
+.service-desk{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.delevery-time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0;
+
+}
+.delevery-time .delevery i{
+    color: var(--primary);
+    margin:0 8px;
+}
+/* .service-desk h4, span{
+    font-size: 1.4rem;
+    margin: 10px 0;
+} */
+.tab-content p{
+    margin-bottom: 8px;
+    line-height: 30px;
+}
+
+.paginate-container{
+    @apply flex items-center justify-between
+}
+.paginate-link{
+    @apply px-5 py-3 bg-transparent mx-2 shadow-md rounded-md font-bold dark:bg-darkH dark:text-lightH
+}
+
+.admin-paginate-link{
+    @apply px-5 py-3 bg-transparent mx-2 shadow-md rounded-md font-bold dark:bg-darkF dark:text-lightH
+}
